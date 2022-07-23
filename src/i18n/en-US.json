@@ -1,3 +1,5 @@
 {
-  "save": "Save"
+  "save": "Save",
+  "no_data_found": "No Data Found.",
+  "delete_task": "Delete Task"
 }
