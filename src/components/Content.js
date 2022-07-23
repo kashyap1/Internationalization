@@ -1,12 +1,20 @@
 import * as React from "react";
 import { Box, Grid, Paper, IconButton } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import DeleteIcon from "@mui/icons-material/Delete";
 import styles from "./Content.module.css";
 import TaskCreateForm from "./TaskCreateForm";
 import Reducer from "../reducer";
 import initialState from "../reducer/initialState";
+import DeleteTask from "./DeleteTask";
 
+/**
+ *
+ * @param {*} props
+ * confirm delete with dark entity name
+ * success message with entity name
+ * error input message
+ * delete spinner
+ */
 function Content(props: any) {
   const { t } = useTranslation();
   const [state, dispatch] = React.useReducer(Reducer, initialState);
@@ -23,7 +31,7 @@ function Content(props: any) {
           }}
         />
         <Grid item xs={12}>
-          {!state.tasks.length ? t("no_data_found") : null}
+          {!state.tasks.length ? <Box>{t("no_data_found")}</Box> : null}
           {state.tasks?.map((task) => (
             <Paper
               variant="outlined"
@@ -46,20 +54,16 @@ function Content(props: any) {
             >
               <Box sx={{ alignSelf: "center" }}>{task}</Box>
               <div>
-                <IconButton
-                  color="error"
-                  aria-label={t("delete_task")}
-                  component="label"
-                  onClick={(e) => {
+                <DeleteTask
+                  item={task}
+                  onDelete={(e) => {
                     e.stopPropagation();
                     dispatch({
                       type: "DELETE",
                       payload: task
                     });
                   }}
-                >
-                  <DeleteIcon />
-                </IconButton>
+                />
               </div>
             </Paper>
           ))}

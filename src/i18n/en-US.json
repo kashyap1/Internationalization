@@ -1,5 +1,9 @@
 {
   "save": "Save",
+  "enter_task": "Enter task name.",
   "no_data_found": "No Data Found.",
-  "delete_task": "Delete Task"
+  "delete_task": "Delete Task",
+  "add_task": "Add Task",
+  "confirm_delete_title": "Confirm Delete",
+  "confirm_delete_message": "Are you sure, you want to delete the task {{item}}?"
 }

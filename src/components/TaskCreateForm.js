@@ -25,7 +25,7 @@ function TaskCreateForm(props: any) {
       <Grid item xs={10}>
         <TextField
           id="outlined-basic"
-          label="Add Task"
+          label={t("add_task")}
           variant="outlined"
           inputRef={textInput}
           fullWidth
@@ -36,6 +36,9 @@ function TaskCreateForm(props: any) {
         <Button type="submit" variant="contained">
           {t("save")}
         </Button>
+      </Grid>
+      <Grid item xs={12} sx={{ textAlign: "left", color: "error.main" }}>
+        {t(props.error?.toLowerCase())}
       </Grid>
     </Grid>
   );
