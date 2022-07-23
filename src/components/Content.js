@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Grid, Paper, IconButton } from "@mui/material";
+import { Box, Grid, Paper, IconButton } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import DeleteIcon from "@mui/icons-material/Delete";
 import styles from "./Content.module.css";
@@ -29,13 +29,22 @@ function Content(props: any) {
               variant="outlined"
               square
               key={task}
-              sx={{ display: "flex", justifyContent: "space-between", p: 2 }}
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignContent: "center",
+                p: "16px",
+                mb: 1,
+                ":hover": {
+                  background: "palatte.primary.light"
+                }
+              }}
               onClick={(e) => {
                 dispatch({ type: "SET_TASK", payload: task });
                 textInput.current.value = task;
               }}
             >
-              <div>{task}</div>
+              <Box sx={{ alignSelf: "center" }}>{task}</Box>
               <div>
                 <IconButton
                   color="error"

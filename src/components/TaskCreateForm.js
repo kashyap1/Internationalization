@@ -16,7 +16,11 @@ function TaskCreateForm(props: any) {
       container
       xs={12}
       paddingBottom={8}
-      sx={{ justifyContent: "space-evenly", alignItems: "center" }}
+      sx={{
+        justifyContent: "space-evenly",
+        alignItems: "center",
+        paddingTop: "16px"
+      }}
     >
       <Grid item xs={10}>
         <TextField
