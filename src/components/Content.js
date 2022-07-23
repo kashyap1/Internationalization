@@ -36,7 +36,7 @@ function Content(props: any) {
                 p: "16px",
                 mb: 1,
                 ":hover": {
-                  background: "palatte.primary.light"
+                  backgroundColor: "primary.lightest"
                 }
               }}
               onClick={(e) => {
