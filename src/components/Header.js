@@ -1,27 +1,32 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Typography,
+  Menu,
+  Container,
+  Avatar,
+  Tooltip,
+  MenuItem
+} from "@mui/material";
+import resources from "../i18n/resources";
+import i18n from "../i18n";
 import AdbIcon from "@mui/icons-material/Adb";
-
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+import { useTranslation } from "react-i18next";
 
 const ResponsiveAppBar = () => {
+  const { t } = useTranslation();
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
 
-  const handleCloseUserMenu = () => {
+  const handleCloseUserMenu = (e, lang) => {
     setAnchorElUser(null);
+    i18n.changeLanguage(lang);
   };
 
   return (
@@ -67,9 +72,14 @@ const ResponsiveAppBar = () => {
           </Typography>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+            <Tooltip title={t("select_language")}>
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar
+                  alt={i18n.language}
+                  sx={{ backgroundColor: "secondary.main" }}
+                >
+                  {i18n.language?.split("-")[0].toLocaleUpperCase()}
+                </Avatar>
               </IconButton>
             </Tooltip>
             <Menu
@@ -88,9 +98,12 @@ const ResponsiveAppBar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+              {Object.entries(resources).map(([lang, { label }]) => (
+                <MenuItem
+                  key={lang}
+                  onClick={(e) => handleCloseUserMenu(e, lang)}
+                >
+                  <Typography textAlign="center">{label}</Typography>
                 </MenuItem>
               ))}
             </Menu>

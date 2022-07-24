@@ -1,1 +1,12 @@
-{}
+{
+  "save": "DE_Save",
+  "enter_task": "DE_Enter task name.",
+  "no_data_found": "DE_No Data Found.",
+  "delete_task": "DE_Delete Task",
+  "add_task": "DE_Add Task",
+  "confirm_delete_title": "DE_Confirm Delete",
+  "confirm_delete_message": "DE_Are you sure, you want to delete the task {{item}}?",
+  "select_language": "DE_Select Language",
+  "delete": "DE_Delete",
+  "close": "DE_Close"
+}

@@ -23,8 +23,8 @@ function DeleteTask(props: any) {
         onClose={onClose}
         actions={
           <>
-            <Button onClick={(e) => setOpen(false)}>Close</Button>
-            <Button onClick={(e) => props.onDelete(e)}>Delete</Button>
+            <Button onClick={(e) => setOpen(false)}>{t("close")}</Button>
+            <Button onClick={(e) => props.onDelete(e)}>{t("delete")}</Button>
           </>
         }
       ></ConfirmationDialog>

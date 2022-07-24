@@ -1,22 +1,9 @@
 import i18n from "i18next";
+import detector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
-import TRANSLATIONS_RU_RU from "./ru-RU.json";
-import TRANSLATIONS_EN_US from "./en-US.json";
-import TRANSLATIONS_DE_DE from "./de-DE.json";
+import resources from "./resources";
 
-const resources = {
-  "en-US": {
-    translation: TRANSLATIONS_EN_US
-  },
-  "ru-RU": {
-    translation: TRANSLATIONS_RU_RU
-  },
-  "de-DE": {
-    translation: TRANSLATIONS_DE_DE
-  }
-};
-i18n.use(initReactI18next).init({
-  lng: "en-US",
+i18n.use(detector).use(initReactI18next).init({
   resources,
   fallbackLng: "en-US"
 });
