@@ -52,6 +52,7 @@ function Content(props: any) {
                 }
               }}
               onClick={(e) => {
+                console.log("on click called");
                 dispatch({ type: "SET_TASK", payload: task });
                 textInput.current.value = task;
               }}
@@ -61,11 +62,11 @@ function Content(props: any) {
                 <DeleteTask
                   item={task}
                   onDelete={(e) => {
-                    e.stopPropagation();
                     dispatch({
                       type: "DELETE",
                       payload: task
                     });
+                    textInput.current.value = "";
                   }}
                 />
               </div>

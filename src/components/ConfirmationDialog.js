@@ -10,7 +10,11 @@ export default function ConfirmationDialog(props) {
     <div>
       <Dialog
         open={props.open}
-        onClose={props.handleClose}
+        onClose={(e) => {
+          e.stopPropagation();
+          e.nativeEvent.stopImmediatePropagation();
+          props.handleClose();
+        }}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >

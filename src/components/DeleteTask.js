@@ -7,7 +7,10 @@ import ConfirmationDialog from "./ConfirmationDialog";
 function DeleteTask(props: any) {
   const { t } = useTranslation();
   const [open, setOpen] = React.useState(false);
-  const onClose = (e) => {};
+  const onClose = (e) => {
+    console.log("i n - C l O S E");
+    setOpen(false);
+  };
   return (
     <IconButton
       color="error"
@@ -23,8 +26,24 @@ function DeleteTask(props: any) {
         onClose={onClose}
         actions={
           <>
-            <Button onClick={(e) => setOpen(false)}>{t("close")}</Button>
-            <Button onClick={(e) => props.onDelete(e)}>{t("delete")}</Button>
+            <Button
+              onClick={(e) => {
+                e.stopPropagation();
+                e.nativeEvent.stopImmediatePropagation();
+                setOpen(false);
+              }}
+            >
+              {t("close")}
+            </Button>
+            <Button
+              onClick={(e) => {
+                e.stopPropagation();
+                e.nativeEvent.stopImmediatePropagation();
+                props.onDelete(e);
+              }}
+            >
+              {t("delete")}
+            </Button>
           </>
         }
       ></ConfirmationDialog>
