@@ -9,5 +9,6 @@
   "select_language": "RU_Select Language",
   "delete": "RU_Delete",
   "close": "RU_Close",
-  "duplicate_task": "RU_Task already exists."
+  "duplicate_task": "RU_Task already exists.",
+  "all_right_reserved": "RU_All rights reserved."
 }

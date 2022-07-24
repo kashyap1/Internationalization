@@ -9,5 +9,10 @@
   "select_language": "Select Language",
   "delete": "Delete",
   "close": "Close",
-  "duplicate_task": "Task already exists."
+  "duplicate_task": "Task already exists.",
+  "all_right_reserved": "All rights reserved.",
+  "copyright": "Copyright © <1>Gupshup</1> {{date}}.",
+  "tasks_one": "{{count}} Task",
+  "tasks_other": "{{count}} Tasks",
+  "total": "Total:"
 }

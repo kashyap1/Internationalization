@@ -9,5 +9,6 @@
   "select_language": "DE_Select Language",
   "delete": "DE_Delete",
   "close": "DE_Close",
-  "duplicate_task": "DE_Task already exists."
+  "duplicate_task": "DE_Task already exists.",
+  "all_right_reserved": "DE_All rights reserved."
 }

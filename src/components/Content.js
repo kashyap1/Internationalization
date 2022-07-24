@@ -1,20 +1,13 @@
 import * as React from "react";
-import { Box, Grid, Paper, IconButton } from "@mui/material";
+import { Box, Grid, Paper, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import styles from "./Content.module.css";
 import TaskCreateForm from "./TaskCreateForm";
 import Reducer from "../reducer";
 import initialState from "../reducer/initialState";
 import DeleteTask from "./DeleteTask";
+import { LineWeight } from "@mui/icons-material";
 
-/**
- *
- * @param {*} props
- * confirm delete with dark entity name
- * success message with entity name
- * error input message
- * delete spinner
- */
 function Content(props: any) {
   const { t } = useTranslation();
   const [state, dispatch] = React.useReducer(Reducer, initialState);
@@ -34,6 +27,16 @@ function Content(props: any) {
               textInput.current.value = "";
           }}
         />
+        {!!state.tasks.length && (
+          <Grid item xs={12} sx={{ textAlign: "left", display: "flex" }}>
+            <Typography sx={{ mr: 1, fontWeight: 600 }}>
+              {t("total")}
+            </Typography>
+            <Typography variant="body1">
+              {t("tasks", { count: state.tasks.length })}
+            </Typography>
+          </Grid>
+        )}
         <Grid item xs={12}>
           {!state.tasks.length ? <Box>{t("no_data_found")}</Box> : null}
           {state.tasks?.map((task) => (
