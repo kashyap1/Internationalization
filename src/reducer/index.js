@@ -10,22 +10,30 @@ export default function reducer(state, { type, payload }) {
           const index = draftState.tasks.findIndex(
             (task) => task === draftState.currentTask
           );
-          draftState.tasks[index] = payload;
-          draftState.currentTask = null;
-          draftState.inputError = "";
+          if (
+            payload !== draftState.currentTask &&
+            draftState.tasks.includes(payload)
+          ) {
+            draftState.inputError = "DUPLICATE_TASK";
+          } else if (payload !== draftState.currentTask) {
+            draftState.tasks[index] = payload;
+            draftState.currentTask = null;
+            draftState.inputError = "";
+          }
         } else {
           if (draftState.tasks.includes(payload)) {
             draftState.inputError = "DUPLICATE_TASK";
           } else {
             draftState.tasks = draftState.tasks.concat(payload);
             draftState.inputError = "";
+            draftState.currentTask = null;
           }
         }
-        draftState.currentTask = null;
         break;
       case "DELETE":
         draftState.tasks = draftState.tasks.filter((task) => task !== payload);
         draftState.inputError = "";
+        draftState.currentTask = null;
         break;
       case "SET_TASK":
         draftState.currentTask = payload;

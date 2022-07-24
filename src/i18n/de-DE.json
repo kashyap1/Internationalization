@@ -8,5 +8,6 @@
   "confirm_delete_message": "DE_Are you sure, you want to delete the task {{item}}?",
   "select_language": "DE_Select Language",
   "delete": "DE_Delete",
-  "close": "DE_Close"
+  "close": "DE_Close",
+  "duplicate_task": "DE_Task already exists."
 }

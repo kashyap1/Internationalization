@@ -27,7 +27,11 @@ function Content(props: any) {
           error={state.inputError}
           onCreate={(e) => {
             dispatch({ type: "ADD", payload: textInput.current.value });
-            textInput.current.value = "";
+            if (
+              !state.inputError &&
+              !state.tasks.includes(textInput.current.value)
+            )
+              textInput.current.value = "";
           }}
         />
         <Grid item xs={12}>
