@@ -10,5 +10,9 @@
   "delete": "RU_Delete",
   "close": "RU_Close",
   "duplicate_task": "RU_Task already exists.",
-  "all_right_reserved": "RU_All rights reserved."
+  "all_right_reserved": "RU_All rights reserved.",
+  "copyright": "RU_Copyright © <1>Gupshup</1> {{date}}.",
+  "tasks_one": "RU_{{count}} Task",
+  "tasks_other": "RU_ {{count}} Tasks",
+  "total": "RU_Total:"
 }

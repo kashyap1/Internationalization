@@ -10,5 +10,9 @@
   "delete": "DE_Delete",
   "close": "DE_Close",
   "duplicate_task": "DE_Task already exists.",
-  "all_right_reserved": "DE_All rights reserved."
+  "all_right_reserved": "DE_All rights reserved.",
+  "copyright": "DE_Copyright © <1>Gupshup</1> {{date}}.",
+  "tasks_one": "DE_{{count}} Task",
+  "tasks_other": "DE_{{count}} Tasks",
+  "total": "DE_Total:"
 }
