@@ -1,4 +1,4 @@
-import TRANSLATIONS_RU_RU from "./ru-RU.json";
+import TRANSLATIONS_RU_RU from "./es-ES.json";
 import TRANSLATIONS_EN_US from "./en-US.json";
 import TRANSLATIONS_DE_DE from "./de-DE.json";
 
@@ -7,8 +7,8 @@ export default {
     label: "English",
     translation: TRANSLATIONS_EN_US
   },
-  "ru-RU": {
-    label: "Russian",
+  "es-ES": {
+    label: "Spanish",
     translation: TRANSLATIONS_RU_RU
   },
   "de-DE": {

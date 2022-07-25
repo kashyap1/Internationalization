@@ -1,0 +1,19 @@
+{
+  "save": "ES_Save",
+  "enter_task": "ES_Enter task name.",
+  "no_data_found": "ES_No Data Found.",
+  "delete_task": "ES_Delete Task",
+  "add_task": "ES_Add Task",
+  "confirm_delete_title": "ES_Confirm Delete",
+  "confirm_delete_message": "ES_Are you sure, you want to delete the task {{item}}?",
+  "select_language": "ES_Select Language",
+  "delete": "ES_Delete",
+  "close": "ES_Close",
+  "duplicate_task": "ES_Task already exists.",
+  "all_right_reserved": "ES_All rights reserved.",
+  "copyright": "ES_Copyright © <1>Gupshup</1> {{date}}.",
+  "tasks_one": "ES_{{count}} Task",
+  "tasks_other": "ES_ {{count}} Tasks",
+  "total": "ES_Total:"
+}
+
