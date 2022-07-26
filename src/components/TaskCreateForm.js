@@ -15,6 +15,7 @@ function TaskCreateForm(props: any) {
       item
       container
       xs={12}
+      md={12}
       paddingBottom={8}
       sx={{
         justifyContent: "space-evenly",
@@ -22,7 +23,7 @@ function TaskCreateForm(props: any) {
         paddingTop: "16px"
       }}
     >
-      <Grid item xs={10}>
+      <Grid item xs={10} md={11}>
         <TextField
           id="outlined-basic"
           label={t("add_task")}
@@ -32,7 +33,7 @@ function TaskCreateForm(props: any) {
           sx={{ paddingRight: "16px" }}
         />
       </Grid>
-      <Grid item xs={2}>
+      <Grid item xs={2} md={1}>
         <Button type="submit" variant="contained">
           {t("save")}
         </Button>

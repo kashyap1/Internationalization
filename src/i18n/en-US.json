@@ -5,7 +5,7 @@
   "delete_task": "Delete Task",
   "add_task": "Add Task",
   "confirm_delete_title": "Confirm Delete",
-  "confirm_delete_message": "Are you sure, you want to delete the task {{item}}?",
+  "confirm_delete_message": "Are you sure, you want to delete the task \"{{item}}\"?",
   "select_language": "Select Language",
   "delete": "Delete",
   "close": "Close",
