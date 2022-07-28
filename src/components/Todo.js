@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Box, Grid, Paper, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import styles from "./Content.module.css";
-import TaskCreateForm from "./TaskCreateForm";
+import styles from "./Todo.module.css";
+import TaskCreateForm from "./CreateTask";
 import Reducer from "../reducer";
 import initialState from "../reducer/initialState";
 import DeleteTask from "./DeleteTask";
